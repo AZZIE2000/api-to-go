@@ -178,8 +178,8 @@ fastify.get("/trackShipment", async (request, reply) => {
 
 const start = async () => {
   try {
-    await fastify.listen({ port: 1234 });
-    console.log("Server listening on port 1234");
+    await fastify.listen({ port: 4000 });
+    console.log("Server listening on port 4000");
   } catch (err) {
     console.error(err);
     process.exit(1);
