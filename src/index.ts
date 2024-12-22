@@ -1,6 +1,7 @@
 import Fastify from "fastify";
 
 const fastify = Fastify();
+const port = process.env.PORT ? +process.env.PORT : 4000;
 
 fastify.get("/trackShipment", async (request, reply) => {
   const { shipmentId } = request.query as { shipmentId: string };
@@ -178,8 +179,8 @@ fastify.get("/trackShipment", async (request, reply) => {
 
 const start = async () => {
   try {
-    await fastify.listen({ port: 4000 });
-    console.log("Server listening on port 4000");
+    await fastify.listen({ port: port });
+    console.log(`Server listening on port ${port}`);
   } catch (err) {
     console.error(err);
     process.exit(1);
